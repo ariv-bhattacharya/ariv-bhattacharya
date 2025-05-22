@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Form For Tata Motors</title>
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+
+    <div class="form-container">
+      <form onsubmit="callvalue(event)">
+        <div class="input-name">
+          <i class="fa fa-user"></i>
+          <input type="text" id="fname" placeholder="First Name" class="name" required />
+          <span>
+            <i class="fa fa-user"></i>
+            <input type="text" id="lname" placeholder="Last Name" class="name" required />
+          </span>
+        </div>
+
+        <div class="input-name">
+          <i class="fa fa-envelope email"></i>
+          <input type="email" id="email" placeholder="Email" class="text-name" required />
+        </div>
+
+        <div class="input-name">
+          <i class="fa fa-lock"></i>
+          <input type="password" id="pass1" placeholder="Enter Password" class="text-name" required />
+        </div>
+
+        <div class="input-name">
+          <i class="fa fa-lock"></i>
+          <input type="password" id="pass2" placeholder="Confirm Password" class="text-name" required />
+        </div>
+
+        <div class="input-name">
+          <input type="radio" name="gender" value="Male" required />
+          <label>Male</label>
+          <span>
+            <input type="radio" name="gender" value="Female" />
+            <label>Female</label>
+          </span>
+        </div>
+
+        <div class="input-name">
+          <select class="country" id="country" required>
+            <option value="">Select Country</option>
+                        <option> Select Country  </option>
+                        <option> France </option>
+                        <option> Argentina </option>
+                        <option> Spain </option>
+                        <option> Myanmar </option>
+                        <option> Ireland </option>
+                        <option> Nepal </option>
+                        <option> Bhutan</option>
+                        <option> Bangladesh</option>
+                        <option> Pakistan</option>
+                        <option> Africa</option>
+                        <option> Uganda </option>
+                        <option> United States Of America </option>
+                        <option> New Zeland </option>
+                        <option> Australia </option>
+                        <option> India </option>
+          </select>
+        </div>
+
+        <div class="input-name">
+          <input type="checkbox" class="check-button" id="terms" required />
+          <label>I Accept The Terms And Conditions</label>
+        </div>
+
+        <div class="input-name">
+          <input type="submit" class="button" value="Register" />
+        </div>
+        <div class="register-link">
+                    <p>Have an account?
+                        <a href="loginpage.html">Sign Up.</a>
+                    </p>
+                </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="display2.js"></script>
+</body>
+</html>
