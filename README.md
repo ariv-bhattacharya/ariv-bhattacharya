@@ -1,2 +1,1 @@
 - 👋 Hi, I’m @ariv-bhattacharya
-- This repo is for a project I am working on.
