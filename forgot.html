@@ -39,7 +39,7 @@
     </div>
 
     <script>
-        // Get references to DOM elements
+        
         const usernameForm = document.getElementById('username-form');
         const passwordForm = document.getElementById('password-form');
         const usernameInput = document.getElementById('usernameInput');
@@ -49,11 +49,6 @@
         const formTitle = document.getElementById('form-title');
         const backToUsernameBtn = document.getElementById('backToUsernameBtn');
 
-        /**
-         * Displays a message to the user.
-         * @param {string} message - The message text.
-         * @param {string} type - 'success', 'error', or 'info' to apply specific styling.
-         */
         function showMessage(message, type) {
             messageArea.textContent = message;
             messageArea.className = 'message-area'; // Reset classes
@@ -66,41 +61,33 @@
             }
         }
 
-        /**
-         * Handles the submission of the username authentication form.
-         * Simulates an API call to authenticate the username.
-         */
         usernameForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
             const username = usernameInput.value.trim();
             showMessage('Authenticating username...', 'info');
 
-            // Simulate server-side authentication with a delay
+            
             setTimeout(() => {
-                // In a real application, you would send 'username' to your backend
-                // and receive a response indicating success or failure.
-                if (username === 'testuser' || username === 'demo') { // Example valid usernames
+                
+                if (username === 'testuser' || username === 'demo') { 
                     showMessage('Username authenticated. Please set your new password.', 'success');
-                    usernameForm.classList.add('hidden'); // Hide username form
-                    passwordForm.classList.remove('hidden'); // Show password form
-                    formTitle.textContent = 'Reset Password'; // Change title
-                    newPasswordInput.focus(); // Focus on the new password input
+                    usernameForm.classList.add('hidden'); 
+                    passwordForm.classList.remove('hidden');
+                    formTitle.textContent = 'Reset Password'; 
+                    newPasswordInput.focus(); 
                 } else {
                     showMessage('Authentication failed. Username not found.', 'error');
                 }
             }, 1500); // Simulate network delay
         });
 
-        /**
-         * Handles the submission of the new password form.
-         * Simulates an API call to reset the password.
-         */
+    
         passwordForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
             const newPassword = newPasswordInput.value;
             const confirmPassword = confirmPasswordInput.value;
 
-            // Client-side validation
+           
             if (newPassword.length < 6) {
                 showMessage('Password must be at least 6 characters long.', 'error');
                 return;
@@ -112,40 +99,35 @@
 
             showMessage('Resetting password...', 'info');
 
-            // Simulate server-side password reset with a delay
+           
             setTimeout(() => {
-                // In a real application, you would send 'username' (if stored) and 'newPassword' to your backend
-                showMessage('Password has been successfully reset!', 'success');
-                // Optionally, redirect to a login page or show a permanent success message
-                // window.location.href = 'login.html';
                 
-                // For demonstration, hide password form and show a success message
+                showMessage('Password has been successfully reset!', 'success');
+                
+                
+                
                 passwordForm.classList.add('hidden');
                 formTitle.textContent = 'Password Reset Complete';
-                messageArea.classList.add('permanent-success'); // Add a class for persistent success styling
-            }, 1500); // Simulate network delay
+                messageArea.classList.add('permanent-success');
+            }, 1500); 
         });
 
-        /**
-         * Handles the click of the "Back to Username" button.
-         * Resets the forms and returns to the username authentication step.
-         */
         backToUsernameBtn.addEventListener('click', function() {
-            passwordForm.classList.add('hidden'); // Hide password form
-            usernameForm.classList.remove('hidden'); // Show username form
-            formTitle.textContent = 'Forgot Password'; // Reset title
-            showMessage('', ''); // Clear messages
-            usernameInput.value = ''; // Clear input fields
+            passwordForm.classList.add('hidden'); 
+            usernameForm.classList.remove('hidden'); 
+            formTitle.textContent = 'Forgot Password';
+            showMessage('', ''); 
+            usernameInput.value = ''; 
             newPasswordInput.value = '';
             confirmPasswordInput.value = '';
-            usernameInput.focus(); // Focus on username input
+            usernameInput.focus(); 
         });
 
-        // Initial setup on page load
+        
         window.onload = function() {
-            usernameForm.classList.remove('hidden'); // Ensure username form is visible
-            passwordForm.classList.add('hidden'); // Ensure password form is hidden
-            usernameInput.focus(); // Focus on username input on load
+            usernameForm.classList.remove('hidden'); 
+            passwordForm.classList.add('hidden'); 
+            usernameInput.focus(); 
         };
     </script>
 </body>
